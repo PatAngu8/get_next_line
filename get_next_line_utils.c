@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paangulo <paangulo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: patri <patri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:49:43 by paangulo          #+#    #+#             */
-/*   Updated: 2024/08/22 18:57:28 by paangulo         ###   ########.fr       */
+/*   Updated: 2024/08/28 14:41:38 by patri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,23 @@ void	ft_bzero(void *s, size_t n)
 	ptr = s;
 	while (n--)
 		*ptr++ = 0;
+}
+
+char	*ft_strjoin(char *s1, char const *s2, size_t len)
+{
+	size_t	s1_len;
+	size_t	s2_len;
+	char	*new_s;
+
+	if (!s1 || !s2)
+		return (NULL);
+	s1_len = ft_strlen(s1);
+	s2_len = len;
+	new_s = (char *)malloc((s1_len + s2_len + 1) * sizeof(char));
+	if (!new_s)
+		return (NULL);
+	ft_strlcpy(new_s, s1, s1_len + 1);
+	ft_strlcpy((new_s + s1_len), s2, s2_len + 1);
+	free(s1);
+	return (new_s);
 }
