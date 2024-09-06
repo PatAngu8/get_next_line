@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: patri <patri@student.42.fr>                +#+  +:+       +#+        */
+/*   By: paangulo <paangulo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:49:43 by paangulo          #+#    #+#             */
-/*   Updated: 2024/08/28 14:41:38 by patri            ###   ########.fr       */
+/*   Updated: 2024/09/06 12:38:43 by paangulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,21 @@ char	*ft_strjoin(char *s1, char const *s2, size_t len)
 	ft_strlcpy((new_s + s1_len), s2, s2_len + 1);
 	free(s1);
 	return (new_s);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	c = (char)c;
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return ((void *)0);
 }

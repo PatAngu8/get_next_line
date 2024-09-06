@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: patri <patri@student.42.fr>                +#+  +:+       +#+        */
+/*   By: paangulo <paangulo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 17:18:06 by paangulo          #+#    #+#             */
-/*   Updated: 2024/09/05 14:39:25 by patri            ###   ########.fr       */
+/*   Updated: 2024/09/06 12:42:18 by paangulo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@ char	*readline(int fd, char *buf)
 	char	*line;
 	int		count; //almacenará nº de bytes o caracteres leídos	
 	count = -3;
-	line = ft_strdup (buf);
-	while (!(strchr(line, '\n')) && count != 0)
+	line = ft_strdup (buf);//Esto es lo mismo que lo siguiente (hasta return (line)):
+	/*line = malloc(ft_strlen(buf)) * sizeof(char);
+	if (!buf)
+		return (NULL);
+	ft_strcpy(buf, line);
+	return (line);*/
+	while (!(ft_strchr(line, '\n')) && count != 0)
 	{
 		count = read(fd, buf, BUFFER_SIZE);
 		if (count == -1)
