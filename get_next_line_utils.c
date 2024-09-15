@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paangulo <paangulo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: patri <patri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:49:43 by paangulo          #+#    #+#             */
-/*   Updated: 2024/09/06 12:38:43 by paangulo         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:37:57 by patri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = '\0';
 	}
 	return (srcsize);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*ptr;
-
-	ptr = s;
-	while (n--)
-		*ptr++ = 0;
 }
 
 char	*ft_strjoin(char *s1, char const *s2, size_t len)
